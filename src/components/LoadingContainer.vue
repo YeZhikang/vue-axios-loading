@@ -36,7 +36,7 @@ export default {
             parentNode.appendChild(child)
             child.style.opacity = 0
             child.classList.add('loading')
-            setTimeout(() => child.style.opacity = 1,0)
+            setTimeout(() => child.style.opacity = 0.5,0)
         },
 
         /**
@@ -45,8 +45,8 @@ export default {
          * @returns {boolean}
          */
         removeLoadingContainer(parentNode) {
-            this.childNode.style.opacity = 0
-            setTimeout(() => parentNode.removeChild(this.childNode), 0)
+            setTimeout(() => this.childNode.style.opacity = 0,0)
+            setTimeout(() => parentNode.removeChild(this.childNode), 200)
             return true
         },
 
@@ -88,7 +88,7 @@ export default {
     }
 
     .loading {
-        background-color: #f3f3f3;
+        background-color: #f7f7f7;
         animation: showContainer;
     }
 
@@ -98,6 +98,7 @@ export default {
         border-radius: 50%;
         -webkit-animation: 1s loader linear infinite;
         animation: 1s loader linear infinite;
+        animation-delay: 0.1s;
         position: relative;
         height: 15px;
         width: 15px;
