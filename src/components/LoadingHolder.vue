@@ -50,7 +50,7 @@ export default {
             const method = this.methodsArrHasData.includes(this.method.toLowerCase())
             || this.methodsArrWithoutData.includes(this.method.toLowerCase())
                 ? this.method.toLowerCase() : 'error'
-            const requestFrom = window.service ? window.service : axios
+            const requestFrom = window.server ? window.server : axios
             if (method === 'error') throw 'Request method is not support !'
             return this.choseRequestWay(method, this.url, this.config, requestFrom, this.data)
         },
