@@ -36,7 +36,7 @@ export default async function (data) {
             response = await singleLoader.handleStart()
             resolve(response)
         })
-    })).then(response => {})
+    })).then(() => {})
 
     return response
 }
