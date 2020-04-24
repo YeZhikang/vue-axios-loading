@@ -84,7 +84,7 @@ export default {
 }
 </script>
 ```
-这样，就能用`$send`方法实现相关问题
+这样，就能用`$send`方法实现相关需求
 
 ## 近期任务
 [1] loading 的样式定制化
