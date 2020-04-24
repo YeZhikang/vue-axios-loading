@@ -7,9 +7,8 @@ export function returnDom(val) {
     let isDom;
     if (typeof HTMLElement === 'object') isDom = (val instanceof HTMLElement)
     else{
-        const dom = document.querySelector(val)
-        isDom = !!dom
         val = document.querySelector(val)
+        isDom = !!val
     }
     return { isDom, dom: val }
 }
