@@ -1,4 +1,4 @@
-# vue-axios-loading
+# axios-vue-loading
 一个结合视图与进度条的异步、自动化请求发起插件
 
 ## 使用方法
@@ -6,7 +6,7 @@
 ```javascript
 // src/main.js
 import Vue from 'vue'
-import send from 'vue-axios-loading'
+import send from 'axios-vue-loading'
 Vue.prototype.$send = send
 ```
 ### 在组件中调用
@@ -14,7 +14,7 @@ Vue.prototype.$send = send
 
 `send`方法需要传入一个对象，用来**发起请求**、**定制`进度`样式**。
 
-**vue-axios-loading** 目前支持两种进度展示：进度条（loading-bar）和局部遮罩（loading-container），可以通过
+**axios-vue-loading** 目前支持两种进度展示：进度条（loading-bar）和局部遮罩（loading-container），可以通过
 `send` 方法的参数传递来进行选择是否保留。
 
 ```vue
@@ -65,7 +65,7 @@ export default axios
 // 主入口 main.js
 import Vue from 'vue'
 import axios from 'utils/axios'
-import send from 'vue-axios-loading'
+import send from 'axios-vue-loading'
 
 window.server = axios
 Vue.prototype.$send = send
@@ -84,7 +84,7 @@ export default {
 }
 </script>
 ```
-这样，就能用`$send`方法实现相关问题
+这样，就能用`$send`方法实现相关需求
 
 ## 近期任务
 [1] loading 的样式定制化
