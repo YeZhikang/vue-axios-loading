@@ -28,7 +28,7 @@ export default {
                 barShow: true,              // 是否显示进度条
                 containerShow: true,        // 是否显示遮罩
                 config: {                   // axios 配置项目（参考 axios）
-                    'content-type': 'application/javascript',
+                    'content-type': 'application/json',
                     'timeout': 30000,       // 超时请求时间（如果没有设置，则默认为30000秒）
                 },
                 targetDom: '.admin-table',  // 需要渲染接收的 ajax 数据的 dom 元素（支持传入 HTMLElement 类型或 string 类型）        
