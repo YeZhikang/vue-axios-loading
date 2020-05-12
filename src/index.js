@@ -21,7 +21,8 @@ export default async function (data) {
             'post',
             'options',
             'put'
-        ]
+        ],
+        data: data.params
     }
     const singleLoader = new Loading({
         data
