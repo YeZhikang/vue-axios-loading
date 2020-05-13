@@ -42,22 +42,24 @@ export default {
                 'post',
                 'options',
                 'put'
-            ]
+            ],
         }
     },
     methods: {
         sendRequest() {
             const method = this.methodsArrHasData.includes(this.method.toLowerCase())
-            || this.methodsArrWithoutData.includes(this.method.toLowerCase())
+                || this.methodsArrWithoutData.includes(this.method.toLowerCase())
                 ? this.method.toLowerCase() : 'error'
             const requestFrom = window.server ? window.server : axios
             if (method === 'error') throw 'Request method is not support !'
             return this.choseRequestWay(method, this.url, this.config, requestFrom, this.data)
         },
+
         choseRequestWay(method, url, config, requestFrom, data) {
             if (this.methodsArrWithoutData.includes(method)) return requestFrom[method](url, config)
             else return requestFrom[method](url, data, config)
         },
+
         chooseCurrentDom() {
             const { isDom, dom } = returnDom(this.targetDom)
             if (!isDom) throw 'target is not a DOMElement !'

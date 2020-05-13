@@ -30,14 +30,11 @@ export default async function (data) {
     const singleLoaderEl = singleLoader.$el
     document.body.appendChild(singleLoaderEl)
 
-    let response
 
-    await new Promise((resolve => {
+    return await new Promise((resolve => {
         Vue.prototype.$nextTick(async () => {
-            response = await singleLoader.handleStart()
-            resolve(response)
+            const res = await singleLoader.handleStart()
+            resolve(res)
         })
-    })).then(() => {})
-
-    return response
+    }))
 }

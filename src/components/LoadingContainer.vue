@@ -26,17 +26,16 @@ export default {
          * @param parentNode
          */
         addLoadingContainer(parentNode) {
-            console.log(parentNode)
             const position = parentNode.style.position
-            if (!position) parentNode.style.position = 'relative'
+            if (!position || position === 'static') parentNode.style.position = 'relative'
             const child = document.createElement('div')
             child.classList.add('loading-dom')
             child.appendChild(this.createChildLoadingComponent())
             this.childNode = child
             parentNode.appendChild(child)
-            child.style.opacity = 0
+            child.style.opacity = '0'
             child.classList.add('loading')
-            setTimeout(() => child.style.opacity = 0.5,0)
+            setTimeout(() => child.style.opacity = '0.5',0)
         },
 
         /**

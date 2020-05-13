@@ -9,21 +9,23 @@
 export default {
     name: "LoadingBar",
     props: {
+        // 是否显示loading条
         isShow: {
             default: true,
             type: Boolean
         },
+
+        // 超时请求时间
         timeout: {
             type: Number,
             default: 3000
         },
+
+        // 是否完成
         isReady: {
             default: false,
             type: Boolean
         }
-        // transition: {
-        //     default:
-        // }
     },
     methods: {
         loading(timeOut = 3000, loadingBar) {
